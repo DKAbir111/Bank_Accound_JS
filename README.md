@@ -1,2 +1,1 @@
-# Bank-Accound-JS-
-JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions.
+# Bank_Account_JS
