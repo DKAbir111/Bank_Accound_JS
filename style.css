@@ -1,0 +1,48 @@
+body{
+padding: 100px;
+}
+.title{
+    text-align: center;
+    
+}
+.main-form{
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+}
+#SecondPage{
+    display: none;
+
+}
+.deposit{
+    background-color: slateblue;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.withdraw{
+    background-color: lightsalmon;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.balance{
+    background-color: orange;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.input-1{
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+}
+.input-2{
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+}
