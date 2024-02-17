@@ -28,19 +28,19 @@
             <div class="col-md-4">
                 <div class="deposit">
                 <h5>Deposit</h5>
-                <h1>$ 00</h1>
+                <h2>$<span id="CurrentDeposit">00</span></h2>
             </div>
             </div>
             <div class="col-md-4">
                 <div class="withdraw">
                 <h5>Withdraw</h5>
-                <h1>$ 00</h1>
+                <h2>$<span id="CurrentWithdraw">00</span></h2>
             </div>
             </div>
             <div class="col-md-4">
                 <div class="balance">
                 <h5>Balance</h5>
-                <h1>$1240</h1>
+                <h2>$<span id="CurrentBalance">1240</span></h2>
             </div>
             </div>
         </div>
@@ -50,13 +50,13 @@
                 <div class="col-md-6">
                     <div class="input-1">
                         <h5>Deposit</h5>
-                        <input type="number" class="form-control" id="depositAmount" placeholder="$ amount you want to deposit "><br>
+                        <input type="text" class="form-control" id="depositAmount" placeholder="$ amount you want to deposit "><br>
                         <button class="btn btn-success" id="depositButton">Deposit</button></div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-2">
                         <h5>Withdraw</h5>
-                        <input type="number" class="form-control" id="withdrawAmount"  placeholder="$ amount you want to withdraw "><br>
+                        <input type="text" class="form-control" id="withdrawAmount"  placeholder="$ amount you want to withdraw "><br>
                         <button class="btn btn-success" id="withdrawButton">Withdraw</button></div>
                 </div>
             </div>
@@ -74,13 +74,38 @@
         const depositClick=document.getElementById("depositButton");
         depositClick.addEventListener("click",function(){
             const depositAmount=document.getElementById("depositAmount").value;
-            console.log(depositAmount);
+            const depositAmount_number=parseFloat(depositAmount);
+
+            const CurrentDeposit=document.getElementById("CurrentDeposit").innerText;
+            const CurrentDeposit_number=parseFloat(CurrentDeposit);
+            const totalDeposit = CurrentDeposit_number + depositAmount_number;
+            document.getElementById("CurrentDeposit").innerText=totalDeposit;
+            document.getElementById("depositAmount").value="";
+
+            const CurrentBalance=document.getElementById("CurrentBalance").innerText;
+            const CurrentBalance_number= parseFloat(CurrentBalance);
+            const totalBalance=CurrentBalance_number+depositAmount_number;
+            document.getElementById("CurrentBalance").innerText=totalBalance;
+
+        
         })
 
         const withdrawClick=document.getElementById("withdrawButton");
         withdrawClick.addEventListener("click",function(){
             const withdrawAmount=document.getElementById("withdrawAmount").value;
-            console.log(withdrawAmount);
+            const withdrawAmount_number=parseFloat(withdrawAmount);
+
+            const CurrentWithdraw=document.getElementById("CurrentWithdraw").innerText;
+            const CurrentWithdraw_number=parseFloat(CurrentWithdraw);
+            const totalWithdraw=withdrawAmount_number + CurrentWithdraw_number;
+            document.getElementById("CurrentWithdraw").innerText= totalWithdraw;
+            document.getElementById("withdrawAmount").value="";
+
+            const CurrentBalance=document.getElementById("CurrentBalance").innerText;
+            const CurrentBalance_number= parseFloat(CurrentBalance);
+            const totalBalance=CurrentBalance_number-withdrawAmount_number;
+            document.getElementById("CurrentBalance").innerText=totalBalance;
+
         })
     </script>
 </body>
